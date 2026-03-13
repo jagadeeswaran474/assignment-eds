@@ -674,3 +674,9 @@ export default function decorate(block) {
     block.parentElement.remove();
   }
 }
+
+const target6 = document.querySelector(".contactappend >div>div");
+const tab6 = document.querySelector(".quoteform");
+if (target6 && tab6) {
+    target6.append(tab6);
+}
