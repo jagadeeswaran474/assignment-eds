@@ -239,19 +239,41 @@
 
 .quoteform {
     margin-top: 45px;
+
     form {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
 
+        div:nth-child(5),
         div:last-child {
             grid-column: span 2 / span 2;
+        }
+
+        div:last-child {
+            margin: 0 auto;
         }
     }
 }
 
 .quoteform .form-field+.form-field {
     margin-top: 0;
+}
+
+.quoteform {
+    button {
+        background-color: var(--primary-color);
+        color: #fff;
+        border-radius: 2px;
+        border: 0;
+        margin-top: 25px;
+        padding: 20px;
+
+        &:hover {
+            border: 0;
+            background-color: var(--secondary-color);
+        }
+    }
 }
 
 .contactappend>div>div {
