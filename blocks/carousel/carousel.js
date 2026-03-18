@@ -149,5 +149,17 @@ export default async function decorate(block) {
 
   if (!isSingleSlide) {
     bindEvents(block);
+    enableAutoslide(block, 4000);
   }
+}
+
+function enableAutoslide(block, interval = 4000) {
+  if (block.autoslideInterval) {
+    clearInterval(block.autoslideInterval);
+  }
+
+  block.autoslideInterval = setInterval(() => {
+    const currentIndex = parseInt(block.dataset.activeSlide, 10) || 0;
+    showSlide(block, currentIndex + 1);
+  }, interval);
 }
